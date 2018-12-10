@@ -47,8 +47,7 @@ register_setting(
 );
 
 function blank_api_key( $args ) {
-	var_dump($args);
-	var_dump(get_option('blank_api_key_field'));
+	
 	$blank_api_key = ( get_option( 'blank_api_key_field' ) ) ? esc_attr( get_option( 'blank_api_key_field' ) ): '';
 
 	$output = '';

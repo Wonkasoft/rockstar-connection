@@ -59,8 +59,8 @@ class Rockstar_Connection_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
-
+	public function enqueue_styles( $page ) {
+		
 		/**
 		 * This function is provided for demonstration purposes only.
 		 *
@@ -73,12 +73,13 @@ class Rockstar_Connection_Public {
 		 * class.
 		 */
 		
-		// Check to see if bootstrap style is already enqueue before setting the enqueue
 		$style = 'bootstrap';
-		if( ! wp_style_is( $style, 'enqueued' ) &&  ! wp_style_is( $style, 'done' ) ) {
+			if( ! wp_style_is( $style, 'enqueued' ) &&  ! wp_style_is( $style, 'done' ) ) {
+			// Check page to load bootstrapjs only on settings page
 	    	// Enqueue bootstrap CSS
-			wp_enqueue_style( $style, str_replace( array( 'http:', 'https:' ), '', plugin_dir_url( __FILE__ ) . 'css/bootstrap.min.css'), array(), '4.0.0', 'all');
-		}
+				wp_enqueue_style( $style, 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' , array(), '4.0.0', 'all');
+
+			}
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/rockstar-connection-public.css', array(), $this->version, 'all' );
 
@@ -102,13 +103,6 @@ class Rockstar_Connection_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
-		// Check to see if bootstrap js is already enqueue before setting the enqueue
-		$bootstrapjs = 'bootstrap-js';
-		if ( ! wp_script_is( $bootstrapjs, 'enqueued' ) && ! wp_script_is($bootstrapjs, 'done' ) ) {
-		 	// Enqueue bootstrap js
-			wp_enqueue_script( $bootstrapjs, str_replace( array( 'http:', 'https:' ), '', plugin_dir_url( __FILE__ ) . 'js/bootstrap.min.js' ), array( 'jquery' ), '4.0.0', true );
-		}
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rockstar-connection-public.js', array( 'jquery' ), $this->version, false );
 

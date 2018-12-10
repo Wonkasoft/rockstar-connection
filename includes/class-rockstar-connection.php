@@ -123,9 +123,21 @@ class Rockstar_Connection {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-rockstar-connection-public.php';
 		
 		/**
-		 * This file builds the admin menu .
+		 * This file builds the admin menu.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/rockstar-connection-admin-menu.php';
+
+		/**
+		 * This file builds the video post type and template filters.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/rockstar-connection-post-type.php';
+
+		/**
+		 * This file is for customizations for paid-memberships-pro.
+		 */
+		if ( function_exists( 'pmpro_is_login_page' ) ) {
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/rockstar-connection-pmpro-customized.php';
+		}
 
 		/**
 		 * This file is the Rockstar Connection Settings Page.
