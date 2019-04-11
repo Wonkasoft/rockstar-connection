@@ -30,7 +30,7 @@ class Rockstar_Connection_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+		set_transient( 'rsc_ep_flush', 1, 60 );
 	}
 
 }

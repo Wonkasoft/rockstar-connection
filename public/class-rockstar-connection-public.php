@@ -81,6 +81,10 @@ class Rockstar_Connection_Public {
 
 			}
 
+		wp_enqueue_style( 'slick-styles', plugin_dir_url( __FILE__ ) . 'slick/slick.css', array(), $this->version, 'all' );
+
+		wp_enqueue_style( 'slick-theme-styles', plugin_dir_url( __FILE__ ) . 'slick/slick-theme.css', array(), $this->version, 'all' );
+
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/rockstar-connection-public.css', array(), $this->version, 'all' );
 
 	}
@@ -103,8 +107,9 @@ class Rockstar_Connection_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_enqueue_script( 'slick-js-slider', plugin_dir_url( __FILE__ ) . 'slick/slick.min.js', array( 'jquery' ), $this->version, true );
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rockstar-connection-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rockstar-connection-public.js', array( 'jquery','slick-js-slider' ), $this->version, true );
 
 	}
 

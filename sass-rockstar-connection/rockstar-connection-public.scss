@@ -1,0 +1,410 @@
+/*!
+ * 
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+@import '../sass/mixins/mixins-master';
+.spacer {
+	position: relative;
+	width: 100%;
+	height: 35px;
+	background: #950c16;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: repeating-linear-gradient(
+		  45deg,
+		  #950c16,
+		  #950c16 4px,
+		  rgba( #000000, .7 ) 5px,
+		  rgba( #000000, .7 ) 6px
+		);
+		opacity: .1;
+	}
+
+}
+
+.single-rsc_videos {
+
+	#primary {
+		position: relative;
+
+		#main {
+			position: relative;
+			max-width: 1060px;
+			margin: 0 auto;
+			padding: 15px;
+			background: #fff;
+			@include prefix( box-shadow, 0 1px 6px 0 rgba( #000, .3 ), o moz webkit );
+
+			.entry-title {
+				font-size: 175%;
+			}
+
+			.rsc-video-single-display {
+				min-height: 100%;
+				max-width: 560px;
+				max-height: 315px;
+				margin: auto;
+			}
+
+			.navigation {
+
+				a:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.post-type-archive-rsc_videos {
+
+	#primary {
+		position: relative;
+		height: 100%;
+
+		#main {
+			position: relative;
+			background: #ddd;
+			margin-right: -15px;
+		    margin-left: -15px;
+
+			> div {
+				display: block;
+			}
+
+			.left-sidebar {
+				width: 100%;
+				height: 100%;
+				padding-top: 15px;
+				float: left;
+
+				#rsc-videos-menu {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+
+					li {
+						display: flex;
+						align-items: center;
+						@include prefix( transition, all .2s ease-in-out, o moz webkit );
+
+						&:first-child i:before {
+							content: "\f015";
+							display: block;
+
+						}
+
+						&:nth-child(2) i:before {
+							content: "\f2bd";
+							display: block;
+
+						}
+
+						&:nth-child(3) i:before {
+							content: "\f005";
+							display: block;
+
+						}
+
+						&:nth-child(4) i:before {
+							content: "\f1da";
+							display: block;
+
+						}
+
+						&:nth-child(5) i:before {
+							content: "\f017";
+							display: block;
+
+						}
+
+						&:last-child i:before {
+							content: "\f164";
+							display: block;
+
+						}
+
+						i {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							width: 46px;
+							height: 46px;
+							margin-left: 15px;
+							font-weight: 200;
+							@include font-size(2);
+							@include prefix( transition, all .2s ease-in-out, o moz webkit );
+
+						}
+
+						a {
+							display: inline-block;
+							padding: 8px 15px;
+							color: #333333;
+							font-weight: 700;
+							@include prefix( transition, all .2s ease-in-out, o moz webkit );
+						}
+
+						&:hover {
+							background: #aaaaaa;
+
+							i {
+								color: #950c16;
+							}
+
+							a {
+							}
+						}
+
+						&.current-menu-item {
+							background: #aaaaaa;
+
+							i {
+								color: #950c16;
+							}
+						}
+					}
+				}
+			}
+
+			.main-entry-archive {
+				min-height: 625px;
+				width: 100%;
+				padding: 15px 0 15px 15px;
+				display: inline-block;
+				background: #ebebeb;
+				@include prefix( transition, all .2s ease-in-out, o moz webkit );
+
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+
+			@include media-breakpoint-up( sm ) {
+
+			}
+
+			@include media-breakpoint-up( md ) {
+				
+				.left-sidebar {
+					width: 15%;
+				}
+
+				.main-entry-archive {
+					width: 85%;
+				}
+			}
+
+			@include media-breakpoint-up( lg ) {
+
+			}
+
+			@include media-breakpoint-up( xl ) {
+
+			}
+		}
+	}
+}
+
+/*========================================
+=            Slick Slider CSS            =
+========================================*/
+.post-slide {
+	position: relative;
+}
+
+.post-slide-wrap {
+	position: relative;
+}
+
+.post-slide {
+	height: auto;
+}
+
+.post-slide-wrap .slick-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 50px;
+	height: 50px;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-shadow: 1px 1px 4px rgba( 0, 0, 0, .4 );
+}
+
+.post-slide-wrap .slick-arrow:before {
+	font-size: 40px;
+	opacity: .4;
+	-o-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.post-slide-wrap .slick-arrow:hover {
+	text-shadow: 1px 1px 4px rgba( 0, 0, 0, .8 );
+}
+
+.post-slide-wrap .slick-arrow:hover:before {
+	opacity: 1;
+}
+
+.post-slide-wrap .slick-prev {
+	left: 8px;
+}
+
+.post-slide-wrap .slick-next {
+	right: 8px;
+}
+
+.post-slide-wrap .slick-slide {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 35px;
+	height: 450px;
+	width: 800px;
+	max-height: 906px;
+	box-shadow: 0 1px 6px 0 rgba( 0,0,0, .5 );
+	-o-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.post-slide-wrap .slick-slide iframe {
+	width: 100%;
+	height: 100%;
+	-o-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.post-slide-wrap .slick-slide.slick-current {
+	position: relative;
+	width: 950px;
+	margin: 0 -75px;
+	z-index: 5;
+}
+
+.post-slide-wrap .post-slide-caption {
+	position: absolute;
+    margin: auto;
+    padding: 8px 15px;
+    bottom: 3%;
+    font-size: 1.2rem;
+    background: rgba( 0,0,0, .5 );
+    text-shadow: 1px 1px 4px rgba( 0,0,0, .9 );
+    box-shadow: 0 1px 6px 0 rgba( 0,0,0, .5 );
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+/*=====  End of Slick Slider CSS  ======*/
+
+.pmpro-levels {
+
+	section.container {
+
+		.module-section-row {
+			> div {
+
+			}
+
+			.membership-module {
+				position: relative;
+				background: #950c17;
+				color: #fff;
+				text-align: center;
+				overflow: hidden;
+				border-radius: 8px;
+				width: 350px;
+				min-height: 450px;
+				max-width: 100%;
+				margin: 8px auto;
+
+				.level-title {
+					background: #810c16;
+
+					h4 {
+						margin: 0 auto;
+						padding: 8px 0 0;
+						color: #fff;
+					}
+				}
+
+				span.separator-angle-in {
+					position: relative;
+					color: #950c17;
+					display: block;
+					bottom: 0;
+
+					svg.angle-top-in {
+					    height: 25px;
+					    width: 100%;
+					}
+				}
+
+				&.odd {
+					background: #c41422;
+
+					.level-title {
+						background: #a9131f;
+
+					}
+
+					span.separator-angle-in {
+						color: #c41422;
+					}
+				}
+
+				.level-price {
+					padding: 15px;
+					font-weight: 300;
+					font-size: 1rem;
+
+					span {
+						display: block;
+					}
+
+					.current-price {
+						font-family: "Open Sans";
+						font-size: 3rem;
+						line-height: 1;
+					}
+				}
+
+				.level-plan-package-description {
+					min-height: 175px;
+				}
+
+				.level-plan-button {
+					padding: 15px;
+					position: absolute;
+					width: 100%;
+					bottom: 0;
+
+					.pmpro_btn {
+						background-color: #85121c;
+						border: none;
+						color: #fff;
+						font-size: 1rem;
+						@include prefix( box-shadow, 0 1px 6px 0 rgba( #000, .5 ), o moz webkit );
+					}
+				}
+			}
+		}
+	}
+}

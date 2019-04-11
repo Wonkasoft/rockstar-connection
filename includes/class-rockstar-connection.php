@@ -128,11 +128,6 @@ class Rockstar_Connection {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/rockstar-connection-admin-menu.php';
 
 		/**
-		 * This file builds the video post type and template filters.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/rockstar-connection-post-type.php';
-
-		/**
 		 * This file is for customizations for paid-memberships-pro.
 		 */
 		if ( function_exists( 'pmpro_is_login_page' ) ) {
@@ -186,6 +181,13 @@ class Rockstar_Connection {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'rockstar_connection_register_settings' );
+		$this->loader->add_action( 'init', $plugin_admin, 'RSC_video_post_type' );
+		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'rsc_video_meta_box', 999 );
+		$this->loader->add_action( 'save_post', $plugin_admin, 'rsc_video_link_save' );
+		$this->loader->add_filter( 'archive_template', $plugin_admin, 'load_rsc_videos_template' );
+		$this->loader->add_filter( 'single_template', $plugin_admin, 'load_rsc_videos_template' );
+		$this->loader->add_action( 'init', $plugin_admin, 'rsc_vroom_page_add');
+		$this->loader->add_action( 'template_include', $plugin_admin, 'get_vroom_temp' );
 
 	}
 

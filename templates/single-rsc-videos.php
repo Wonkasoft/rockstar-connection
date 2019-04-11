@@ -33,7 +33,7 @@ if ( function_exists( 'pmpro_bp_lockdown_all_bp' ) ) :
 	}
 endif;
 
-get_header();
+if ( is_user_logged_in() ) : get_header( 'connected' ); else: get_header(); endif; ?>
 ?>
 
 	<div id="primary" class="content-area">

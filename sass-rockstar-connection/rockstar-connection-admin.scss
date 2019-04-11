@@ -1,0 +1,13 @@
+/*!
+ * 
+ * All of the CSS for your admin-facing functionality should be
+ * included in this file.
+ */
+@import '../sass/mixins/mixins-master';
+.rsc-video-display {
+	margin: 15px auto;
+
+	iframe {
+		max-width: 100%;
+	}
+}
