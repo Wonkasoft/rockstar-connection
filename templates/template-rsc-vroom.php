@@ -34,7 +34,7 @@ if ( function_exists( 'pmpro_bp_lockdown_all_bp' ) ) :
 endif;
 
 if ( is_user_logged_in() ) : get_header( 'connected' ); else: get_header(); endif; ?>
-?>
+
   <div id="primary" class="content-area">
     <i class="fa fa-volume-up" aria-hidden="true"> Mute</i>
     <main id="main" class="container-fluid site-main">
