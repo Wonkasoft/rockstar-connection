@@ -44,7 +44,7 @@ if ( is_user_logged_in() ) : get_header( 'connected' ); else: get_header(); endi
         <audio id="player1" autoplay>
           <source src="/wp-content/uploads/2019/01/WelcomeToRockStar.mp3" type="audio/mp3">
         </audio>
-        <?php echo do_shortcode( '[ipanorama slug="virtual-networking-room"]'); ?>
+        <?php echo do_shortcode( '[ipano id="1"]'); ?>
       </div> <!-- /row -->
     </main><!-- #main -->
   </div><!-- #primary -->
